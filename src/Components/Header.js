@@ -39,7 +39,7 @@ function Header() {
         <HeaderOption Icon={Notifications} title="Notifications" />
 
         {!user ? (
-          <HeaderOption avatar title="NAME" onClick={close} />
+          <HeaderOption avatar />
         ) : (
           <HeaderOption
             avatar
