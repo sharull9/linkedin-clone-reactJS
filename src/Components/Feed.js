@@ -14,6 +14,7 @@ import InputOption from "./InputOption";
 import Post from "./Post";
 import { db } from "../firebase";
 import firebase from "firebase/compat/app";
+import FlipMove from "react-flip-move";
 
 function Feed() {
   const [input, setInput] = useState("");
@@ -78,6 +79,8 @@ function Feed() {
         </div>
       </div>
 
+    
+    <FlipMove>
       {posts.map(
         ({ id, data: { name, description, message, photoUrl, timeStamp } }) => (
           <Post
@@ -89,6 +92,8 @@ function Feed() {
           />
         )
       )}
+
+    </FlipMove>
     </div>
   );
 }

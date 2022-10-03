@@ -25,7 +25,7 @@ function Header() {
   return (
     <div className="header">
       <div className="header__left">
-        <img src="/linkedin.svg" alt="" />
+        <img src="/linkedin-white.svg" alt="" />
         <div className="header__search">
           <Search />
           <input type="text" name="" id="" />
@@ -39,7 +39,7 @@ function Header() {
         <HeaderOption Icon={Notifications} title="Notifications" />
 
         {!user ? (
-          <HeaderOption avatar />
+          <HeaderOption avatar loc />
         ) : (
           <HeaderOption
             avatar

@@ -9,6 +9,7 @@ import { login, logout, selectUser } from "../features/userSlice";
 import { auth } from "../firebase";
 import { selectPopup } from "../features/popUpSlice";
 import PopupProfile from "../Components/PopupProfile";
+import Widgets from "../Components/Widgets";
 
 function Home() {
   const user = useSelector(selectUser);
@@ -35,7 +36,7 @@ function Home() {
       <div className="app__body">
         <Sidebar />
         <Feed />
-        {/* right sidebar */}
+        <Widgets />
       </div>
       {!user ? (
         <div className="to-login">
