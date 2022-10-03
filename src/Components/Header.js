@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import HeaderOption from "./HeaderOption";
 import {
@@ -16,12 +16,18 @@ import { openPop, closePop } from "../features/popUpSlice";
 function Header() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
-  const open = () => {
-    dispatch(openPop());
+  const [count, setCount] = useState(0);
+
+  const check = () => {
+    setCount(count + 1);
+    if (count % 2 !== 0) {
+      dispatch(openPop());
+    } else {
+      dispatch(closePop());
+    }
   };
-  const close = () => {
-    dispatch(closePop());
-  };
+  const open = () => {};
+  const close = () => {};
   return (
     <div className="header">
       <div className="header__left">
@@ -41,12 +47,7 @@ function Header() {
         {!user ? (
           <HeaderOption avatar loc />
         ) : (
-          <HeaderOption
-            avatar
-            title={user?.displayName}
-            onClick={open}
-            onDoubleClick={close}
-          />
+          <HeaderOption avatar title={user?.displayName} onClick={check} />
         )}
       </div>
     </div>

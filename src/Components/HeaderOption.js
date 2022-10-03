@@ -4,14 +4,10 @@ import { useSelector } from "react-redux";
 import { selectUser } from "../features/userSlice";
 import "./HeaderOption.css";
 
-function HeaderOption({ avatar, Icon, title, onClick, onDoubleClick }) {
+function HeaderOption({ avatar, Icon, title, onClick }) {
   const user = useSelector(selectUser);
   return (
-    <div
-      className="headerOption"
-      onClick={onClick}
-      onDoubleClick={onDoubleClick}
-    >
+    <div className="headerOption" onClick={onClick}>
       {Icon && <Icon className="headerOption__icon" />}
       {avatar && (
         <Avatar className="headerOption__icon" src={user?.photoURL}>
